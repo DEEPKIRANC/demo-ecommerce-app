@@ -2,7 +2,10 @@ import React from "react";
 import "./Nav.css";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+import { ProductContext } from "./ProductContext";
+import { useContext } from "react";
 export default function Nav() {
+  const [list] = useContext(ProductContext);
   return (
     <div className="Navbar">
       <div className="Navbar__logo">
@@ -10,13 +13,13 @@ export default function Nav() {
         <h3>Demo Shop</h3>
       </div>
       <div className="Navbar__Categories">
-        <span>Men's Clothing</span>
-        <span>Jewelery</span>
-        <span>Electronics</span>
-        <span>Women's Clothing</span>
+        <button>Men's Clothing</button>
+        <button>Jewelery</button>
+        <button>Electronics</button>
+        <button>Women's Clothing</button>
       </div>
       <div className="Navbar__Cart">
-        <label>0</label>
+        <label>{list.length}</label>
 
         <ShoppingCartIcon style={{ color: "whitesmoke" }} />
       </div>

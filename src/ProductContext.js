@@ -3,8 +3,13 @@ import axios from "axios";
 import "./loading.css";
 export const ProductContext = createContext();
 
+const reducer = (list, action) => {
+  return list;
+};
+
 export function ProductList(props) {
   const [list, setList] = useState([]);
+  const [cartlist, dispatch] = useReducer(reducer, []);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

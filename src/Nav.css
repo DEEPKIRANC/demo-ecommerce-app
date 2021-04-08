@@ -27,15 +27,16 @@
   justify-content: center;
 }
 
-.Navbar__Categories > span {
+.Navbar__Categories > button {
   cursor: pointer;
   padding: 0.25rem;
   font-size: 0.75rem;
   user-select: none;
+  background-color: #183757;
+  border: none;
+  color: white;
 }
 
-.Navbar__Categories > span:hover {
-  background: white;
-  color: black;
-  transition: 0.5s ease-in-out;
+.Navbar__Categories > button:hover {
+  border: 1px solid white;
 }

@@ -1,9 +1,7 @@
 .sidebar {
   flex: 0.15;
-  box-sizing: border-box;
   background-color: white;
-  padding: 0.5rem;
-  min-height: 100%;
+  padding: 0.25rem;
 }
 .mainview {
   flex: 0.85;

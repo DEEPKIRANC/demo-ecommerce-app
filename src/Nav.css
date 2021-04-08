@@ -1,6 +1,5 @@
 .Navbar {
   margin: 0;
-  width: 100%;
   padding: 0.25rem;
   background-color: #183757;
   color: whitesmoke;
@@ -28,18 +27,15 @@
   justify-content: center;
 }
 
-.Navbar__Categories > button {
+.Navbar__Categories > span {
   cursor: pointer;
-  box-sizing: border-box;
-  background-color: #183757;
-  border: none;
-  font-family: "Montserrat", sans-serif;
-  color: white;
   padding: 0.25rem;
   font-size: 0.75rem;
   user-select: none;
 }
 
-.Navbar__Categories > button:hover {
-  border: 1px solid white;
+.Navbar__Categories > span:hover {
+  background: white;
+  color: black;
+  transition: 0.5s ease-in-out;
 }

@@ -6,7 +6,7 @@ import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import { ProductContext } from "./ProductContext";
 
 export default function Nav() {
-  const [list] = useContext(ProductContext);
+  const [list, setList, cartList] = useContext(ProductContext);
 
   return (
     <div className="Navbar">
@@ -21,7 +21,7 @@ export default function Nav() {
         <button>Women's Clothing</button>
       </div>
       <div className="Navbar__Cart">
-        <label>{list.length}</label>
+        <label>{cartList.length}</label>
 
         <ShoppingCartIcon style={{ color: "whitesmoke" }} />
       </div>

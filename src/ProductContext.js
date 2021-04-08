@@ -3,8 +3,18 @@ import axios from "axios";
 import "./loading.css";
 export const ProductContext = createContext();
 
+const ACTIONS = {
+  MODIFY_LIST: "modify-list"
+};
+
 const reducer = (list, action) => {
-  return list;
+  switch (action.type) {
+    case ACTIONS.MODIFY_LIST:
+      return;
+
+    default:
+      return list;
+  }
 };
 
 export function ProductList(props) {
@@ -18,6 +28,7 @@ export function ProductList(props) {
         .get("https://fakestoreapi.com/products")
         .then(function (res) {
           let list = res.data;
+          list.map((obj) => ({ ...obj, inCart: false, quantity: 0 }));
           setList(list);
           console.log(list.length);
         })
@@ -49,7 +60,7 @@ export function ProductList(props) {
   }
 
   return (
-    <ProductContext.Provider value={[list, setList]}>
+    <ProductContext.Provider value={[list, setList, cartlist]}>
       {props.children}
     </ProductContext.Provider>
   );

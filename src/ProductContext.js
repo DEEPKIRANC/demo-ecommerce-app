@@ -3,17 +3,17 @@ import axios from "axios";
 import "./loading.css";
 export const ProductContext = createContext();
 
-const ACTIONS = {
-  MODIFY_LIST: "modify-list"
+export const ACTIONS = {
+  UPDATE_CART: "update-cart"
 };
 
-const reducer = (list, action) => {
+const reducer = (cartlist, action) => {
   switch (action.type) {
-    case ACTIONS.MODIFY_LIST:
-      return;
+    case ACTIONS.UPDATE_CART:
+      return [...cartlist,action.List.filter(item=>item.id===action.id).map((item)=>({...item,inCart:true,quantity:item.quantity+1}))];
 
     default:
-      return list;
+      return cartlist;
   }
 };
 
@@ -60,7 +60,7 @@ export function ProductList(props) {
   }
 
   return (
-    <ProductContext.Provider value={[list, setList, cartlist]}>
+    <ProductContext.Provider value={[list, setList, cartlist, dispatch]}>
       {props.children}
     </ProductContext.Provider>
   );

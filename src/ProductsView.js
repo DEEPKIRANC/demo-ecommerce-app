@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
 import "./ProductView.css";
 import { ProductContext } from "./ProductContext";
+import { ACTIONS } from "./ProductContext";
 
 export default function ProductsView() {
-  const [List, setList] = useContext(ProductContext);
+  const [List, setList, cartList, dispatch] = useContext(ProductContext);
 
   return (
     <div className="mainview">
@@ -22,7 +23,13 @@ export default function ProductsView() {
                 &#8377; {listItem.price}
               </span>
               <p style={{ color: "#05fc47" }}>In Stock</p>
-              <button>Add To Cart</button>
+              <button
+                onClick={() =>
+                  dispatch({ type: ACTIONS.UPDATE_CART, List, id: listItem.id })
+                }
+              >
+                Add To Cart
+              </button>
             </div>
           </div>
         ))}

@@ -10,7 +10,14 @@ export const ACTIONS = {
 const reducer = (cartlist, action) => {
   switch (action.type) {
     case ACTIONS.UPDATE_CART:
-      return [...cartlist,action.List.filter(item=>item.id===action.id).map((item)=>({...item,inCart:true,quantity:item.quantity+1}))];
+      return [
+        ...cartlist,
+        action.List.filter((item) => item.id === action.id).map((item) => ({
+          ...item,
+          inCart: true,
+          quantity: item.quantity + 1
+        }))
+      ];
 
     default:
       return cartlist;
@@ -60,7 +67,7 @@ export function ProductList(props) {
   }
 
   return (
-    <ProductContext.Provider value={[list, setList, cartlist, dispatch]}>
+    <ProductContext.Provider value={[list, cartlist, dispatch]}>
       {props.children}
     </ProductContext.Provider>
   );

@@ -1,10 +1,4 @@
-.sidebar {
-  flex: 0.15;
-  background-color: white;
-  padding: 0.25rem;
-}
 .mainview {
-  flex: 0.85;
   padding: 0.25rem;
 }
 .mainview > h3 {

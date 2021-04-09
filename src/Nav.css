@@ -40,3 +40,8 @@
 .Navbar__Categories > button:hover {
   border: 1px solid white;
 }
+.Navbar__Cart > button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}

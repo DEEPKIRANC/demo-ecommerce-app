@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
-
 import "./Nav.css";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import { ProductContext } from "./ProductContext";
+import { Link } from "react-router-dom";
 
 export default function Nav() {
-  const [list, setList, cartList] = useContext(ProductContext);
+  const [list, cartlist, dispatch] = useContext(ProductContext);
 
   return (
     <div className="Navbar">
@@ -21,9 +21,11 @@ export default function Nav() {
         <button>Women's Clothing</button>
       </div>
       <div className="Navbar__Cart">
-        <label>{cartList.length}</label>
+        <label>{cartlist.length}</label>
 
-        <ShoppingCartIcon style={{ color: "whitesmoke" }} />
+        <Link to="/cart">
+          <ShoppingCartIcon style={{ color: "whitesmoke" }} />
+        </Link>
       </div>
     </div>
   );

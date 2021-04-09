@@ -4,7 +4,7 @@ import { ProductContext } from "./ProductContext";
 import { ACTIONS } from "./ProductContext";
 
 export default function ProductsView() {
-  const [List, setList, cartList, dispatch] = useContext(ProductContext);
+  const [List, cartList, dispatch] = useContext(ProductContext);
 
   return (
     <div className="mainview">

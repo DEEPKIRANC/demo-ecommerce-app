@@ -1,18 +1,20 @@
 import "./styles.css";
 import Nav from "./Nav";
-import Sidebar from "./Sidebar";
-import ProductsView from "./ProductsView";
-import { ProductList } from "./ProductContext";
+import Home from "./component/Home";
+
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import CartComponent from "./CartComponent";
+
 export default function App() {
   return (
-    <ProductList>
-      <div className="App">
+    <div className="App">
+      <Router>
         <Nav />
-        <div className="main-content">
-          <Sidebar />
-          <ProductsView />
-        </div>
-      </div>
-    </ProductList>
+        <Switch>
+          <Route path="/cart" exact component={CartComponent} />
+          <Route path="/" exact component={Home} />
+        </Switch>
+      </Router>
+    </div>
   );
 }

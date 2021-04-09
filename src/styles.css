@@ -3,8 +3,3 @@ body {
   background-color: #ebebeb;
   font-family: "Montserrat", sans-serif;
 }
-.main-content {
-  display: flex;
-  min-height: 100vh;
-  flex-wrap: nowrap;
-}
